@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica Ariana</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  
+  <body class="bg-white text-gray-900 font-bold">
+  <div class="min-h-screen flex flex-col p-2 gap-2">
+    <header class="hidden md:block bg-red-500 text-white text-center py-4">
+      HEADER
+    </header>
+
+    <div class="grid grid-cols-3 gap-2">
+      <nav class="col-span-2 bg-orange-300 text-black text-center py-4 ">
+        NAV
+      </nav>
+
+      <div class="col-span-1 bg-green-300 p-2 flex items-center justify-center font-normal">
+        <input type="date" value="dd/mm/aaaa" class="w-full p-1 bg-white border-gray-300 text-md text-center" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-2 flex-grow">
+      <main class="col-span-2 bg-red-100 p-4 text-gray-800 text-sm leading-relaxed font-normal text-xl">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at delectus dolores consequuntur nesciunt ex? Excepturi voluptas maxime tenetur corporis, ducimus architecto sit quia. Harum maiores neque numquam ut adipisci.
+      </main>
+      <aside class="col-span-1 bg-sky-100 text-blue-500 font-bold flex items-center justify-center">
+        ASIDE
+      </aside>
+    </div>
+
+    <div class="block md:hidden px-1 py-3 text-black-500 font-normal text-sm ">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eum quasi quidem quam, repellat at possimus!
+    </div>
+
+    <footer class="bg-violet-400 text-black text-center py-4 font-bold mt-auto">
+      FOOTER
+    </footer>
+  </div>
+</body>
+</html>
