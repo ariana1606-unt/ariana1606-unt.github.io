@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopción-PawConnect</title>
+    <link rel="icon" type="image/jpeg" href="./images/logoPawConnect.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false, 
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./images/logoPawConnect.jpeg" alt="logo-img" width="120">
+            </div>
+
+            <div class="nav-buttons">
+                <button id="modoOscuro" class="dark-btn">
+                    🌙
+                </button>
+                
+                <button id="hamburger-btn" class="hamburger-btn block md:hidden">
+                    ☰
+                </button>
+            </div>
+        </div>
+
+        <ul id="menu-list" class="hidden w-full md:flex md:w-auto flex-col md:flex-row nav-links text-center">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="./adopcion.html">Adopción</a></li>
+            <li><a href="./perdidos.html">Perdidos</a></li>
+            <li><a href="./comunidad.html">Comunidad</a></li>
+        </ul>
+    </header>
+
+    <section class="adoption-hero">
+        <h1>Encuentra tu nuevo mejor amigo 🐶</h1>
+        <p>
+            Explora mascotas disponibles para adopción y cambia una vida para siempre.
+        </p>
+    </section>
+
+    <div class="filters">
+        <button>Todos</button>
+        <button>Perros</button>
+        <button>Gatos</button>
+        <button>Cachorros</button>
+    </div>
+
+    <section class="adoption-section">
+        <div class="adoption-cards">
+
+            <div class="adoption-card">
+                <img src="./images/papi.jpg" alt="Papi">
+                <div class="card-content">
+                    <h2>Papi</h2>
+                    <p>1 año • Juguetón • Arequipa</p>
+                    <button>Ver Perfil</button>
+                </div>
+            </div>
+
+            <div class="adoption-card">
+                <img src="./images/panterita.jpg" alt="Panterita">
+                <div class="card-content">
+                    <h2>Panterita</h2>
+                    <p>3 meses • Cariñoso • Lima</p>
+                    <button>Ver Perfil</button>
+                </div>
+            </div>
+
+            <div class="adoption-card">
+                <img src="./images/milordbb.jpg" alt="Milordbb">
+                <div class="card-content">
+                    <h2>Milord</h2>
+                    <p>4 meses • Travieso • Trujillo</p>
+                    <button>Ver Perfil</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const menuList = document.getElementById('menu-list');
+
+        hamburgerBtn.addEventListener('click', () => {
+            // Alterna entre oculto y bloque flexible de Tailwind
+            menuList.classList.toggle('hidden');
+            menuList.classList.toggle('flex');
+        });
+    </script>
+</body>
+</html>

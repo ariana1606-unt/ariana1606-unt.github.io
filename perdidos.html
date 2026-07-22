@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdidos-PawConnect</title>
+    <link rel="icon" type="image/jpeg" href="./images/logoPawConnect.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./images/logoPawConnect.jpeg" alt="logo-img" width="120">
+            </div>
+
+            <div class="nav-buttons">
+                <button id="modoOscuro" class="dark-btn">
+                    🌙
+                </button>
+                
+                <button id="hamburger-btn" class="hamburger-btn block md:hidden">
+                    ☰
+                </button>
+            </div>
+        </div>
+
+        <ul id="menu-list" class="hidden w-full md:flex md:w-auto flex-col md:flex-row nav-links text-center">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="./adopcion.html">Adopción</a></li>
+            <li><a href="./perdidos.html">Perdidos</a></li>
+            <li><a href="./comunidad.html">Comunidad</a></li>
+        </ul>
+    </header>
+
+    <section class="lost-hero">
+        <h1>Ayudemos a encontrar mascotas 🐾</h1>
+        <p>
+            Reporta mascotas perdidas y ayuda a reunirlas con sus familias.
+        </p>
+    </section>
+
+    <div class="search-section">
+        <input type="text" placeholder="Buscar por nombre o ciudad...">
+    </div>
+
+    <section class="lost-section">
+        <div class="lost-cards">
+            <div class="lost-card">
+                <img src="./images/chloe.jpg" alt="Chloe">
+                <div class="lost-content">
+                    <span class="status">
+                        PERDIDO
+                    </span>
+                    <h2>Chloe</h2>
+                    <p>
+                        📍 Trujillo
+                    </p>
+                    <p>
+                        Perdida hace 3 días cerca al parque San Andrés.
+                    </p>
+                    <button>Contactar</button>
+                </div>
+            </div>
+
+            <div class="lost-card">
+                <img src="./images/gato_gris.jpg" alt="Gato_gris">
+                <div class="lost-content">
+                    <span class="status found">
+                        ENCONTRADO
+                    </span>
+                    <h2>Tom</h2>
+                    <p>
+                        📍 Lima
+                    </p>
+                    <p>
+                        Encontrada gracias a la comunidad PawConnect 💛
+                    </p>
+                    <button>Ver Historia</button>
+                </div>
+            </div>
+
+            <div class="lost-card">
+                <img src="./images/bachicha.png" alt="Bachicha">
+                <div class="lost-content">
+                    <span class="status">
+                        PERDIDO
+                    </span>
+                    <h2>Bachicha</h2>
+                    <p>
+                        📍 Chiclayo
+                    </p>
+                    <p>
+                        Cachorro perdido cerca al Real Plaza.
+                    </p>
+                    <button>Contactar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const menuList = document.getElementById('menu-list');
+
+        hamburgerBtn.addEventListener('click', () => {
+            menuList.classList.toggle('hidden');
+            menuList.classList.toggle('flex');
+        });
+
+        const btnModoOscuro = document.getElementById('modoOscuro');
+        btnModoOscuro.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                btnModoOscuro.textContent = '☀️';
+            } else {
+                btnModoOscuro.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>
