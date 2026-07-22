@@ -5,329 +5,330 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawConnect</title>
     <link rel="icon" type="image/jpeg" href="./images/logoPawConnect.jpeg">
-    <link rel="stylesheet" href="./css/styles.css">
+    
+    <!-- CDN de Tailwind CSS (Activo al 100%) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración para activar la fuente Poppins y el modo oscuro por clase -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 </head>
 
-<body>
-    <header class="navbar">
-        <div class="nav-container">
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans m-0 p-0">
+
+    <!-- NAVBAR RESPONSIVA -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 px-4 py-3 md:px-8 flex flex-col md:flex-row md:items-center md:justify-between">
+        <div class="flex items-center justify-between w-full md:w-auto">
             <div class="logo">
-                <img src="./images/logoPawConnect.jpeg" alt="logo-img" width="120">
+                <img src="./images/logoPawConnect.jpeg" alt="logo-img" width="120" class="rounded">
             </div>
 
-            <div class="nav-buttons">
-                <button id="modoOscuro" class="dark-btn">
+            <div class="flex items-center gap-4">
+                <button id="modoOscuro" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-xl border-0 bg-transparent cursor-pointer transition-colors">
                     🌙
                 </button>
-                
-                <button id="hamburger-btn" class="hamburger-btn">
+                <button id="hamburger-btn" class="block md:hidden text-2xl p-1 text-gray-600 dark:text-gray-300 border-0 bg-transparent cursor-pointer">
                     ☰
                 </button>
             </div>
         </div>
 
-        <ul id="menu-list" class="nav-links text-center md:flex">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="adopcion.html">Adopción</a></li>
-            <li><a href="perdidos.html">Perdidos</a></li>
-            <li><a href="comunidad.html">Comunidad</a></li>
+        <ul id="menu-list" class="hidden w-full md:flex md:w-auto flex-col md:flex-row gap-4 md:gap-8 text-center list-none p-0 mt-4 md:mt-0 font-medium">
+            <li><a href="#" class="text-amber-500 no-underline hover:text-amber-600 dark:hover:text-amber-400">Inicio</a></li>
+            <li><a href="adopcion.html" class="text-gray-600 dark:text-gray-300 no-underline hover:text-amber-500 dark:hover:text-amber-400">Adopción</a></li>
+            <li><a href="perdidos.html" class="text-gray-600 dark:text-gray-300 no-underline hover:text-amber-500 dark:hover:text-amber-400">Perdidos</a></li>
+            <li><a href="comunidad.html" class="text-gray-600 dark:text-gray-300 no-underline hover:text-amber-500 dark:hover:text-amber-400">Comunidad</a></li>
         </ul>
     </header>
 
-    <div id="bienvenida">
+    <!-- BANNER DE BIENVENIDA -->
+    <div id="bienvenida" class="bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200 text-center py-2 px-4 font-medium text-sm">
         🐾 ¡Bienvenido(a) a PawConnect! Encuentra a tu nuevo mejor amigo.
     </div>
-        <section class="hero">
-        <div class="hero-text">
-            <h1>
+
+    <!-- SECCIÓN HERO -->
+    <section class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
+        <div class="space-y-6">
+            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
                 Conectando mascotas con hogares llenos de amor
             </h1>
-
-            <p>
+            <p class="text-lg text-gray-600 dark:text-gray-300">
                 Plataforma para adopción y búsqueda de mascotas perdidas.
             </p>
-
-            <div class="buttons">
-                <button class="btn-primary">
+            <div class="flex flex-wrap gap-4">
+                <button onclick="window.location.href='adopcion.html'" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg shadow border-0 cursor-pointer transition-colors">
                     Adoptar
                 </button>
-                <button class="btn-secondary">
+                <button onclick="window.location.href='perdidos.html'" class="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold py-3 px-6 rounded-lg shadow border-0 cursor-pointer transition-colors">
                     Reportar Mascota
                 </button>
             </div>
         </div>
 
-        <div class="hero-image">
-            <img id="hero-img" src="./images/milord.jpg" alt="Mascota">
+        <div class="w-full h-80 md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            <img id="hero-img" src="./images/milord.jpg" alt="Mascota" class="w-full h-full object-cover">
         </div>
 
-        <div class="test-card">
-    <span>✨ Test interactivo</span>
-    <h3>
-        ¿Qué mascota encaja contigo?
-    </h3>
-    <p>
-        Responde 3 preguntas y descubre tu compañero ideal.
-    </p>
-    <button onclick="abrirTest()">
-        Comenzar test
-    </button>
-</div>
-
-    </section>
-
-    <section class="stats">
-    <div class="stat-box">
-        <h3 id="adopciones">0</h3>
-        <p>Mascotas Adoptadas</p>
-    </div>
-
-    <div class="stat-box">
-        <h3 id="reencuentros">0</h3>
-        <p>Reencuentros Exitosos</p>
-    </div>
-
-    <div class="stat-box">
-        <h3 id="usuarios">0</h3>
-        <p>Usuarios Registrados</p>
-    </div>
-</section>
-
-    <section class="featured">
-        <h2>Mascotas Destacadas - Junio 2026</h2>
-        <h4>Agrega a tus favoritos :D</h4>
-        <div id="mensaje-favorito"></div>
-
-        <div class="cards">
-            <div class="card">
-                <span class="heart">🤍</span>
-                <img src="./images/kitty.jpg" alt="kitty">
-                <h3>Kitty</h3>
-                <p>4 meses • Sociable</p>
-                <button>Ver más</button>
-            </div>
-
-            <div class="card">
-                <span class="heart">🤍</span>
-                <img src="./images/chocolate.jpg" alt="chocolate">
-                <h3>Chocolate</h3>
-                <p>4 años • Juguetón</p>
-                <button>Ver más</button>
-            </div>
-
-            <div class="card">
-                <span class="heart">🤍</span>
-                <img src="./images/milo.jpg" alt="toby">
-                <h3>Toby</h3>
-                <p>2 años • Muy cariñoso</p>
-                <button>Ver más</button>
-            </div>
+        <!-- TARJETA DEL TEST -->
+        <div class="bg-gradient-to-br from-amber-400 to-orange-500 text-white p-6 rounded-2xl shadow-xl space-y-3 md:absolute md:-bottom-10 md:left-4 max-w-sm">
+            <span class="bg-white/20 px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">✨ Test interactivo</span>
+            <h3 class="text-xl font-bold m-0">¿Qué mascota encaja contigo?</h3>
+            <p class="text-sm opacity-90 m-0">Responde 3 preguntas y descubre tu compañero ideal.</p>
+            <button onclick="abrirTest()" class="w-full bg-white text-orange-600 font-bold py-2 px-4 rounded-lg border-0 shadow hover:bg-gray-100 cursor-pointer transition-colors mt-2">
+                Comenzar test
+            </button>
         </div>
     </section>
 
-    <div id="modal-test" class="modal-test">
-    <div class="modal-test-content">
-        <span class="cerrar-test" onclick="cerrarTest()">
-            &times;
-        </span>
+    <!-- SECCIÓN DE ESTADÍSTICAS -->
+    <section class="max-w-6xl mx-auto px-4 pt-16 pb-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+            <h3 id="adopciones" class="text-4xl font-extrabold text-amber-500 m-0">0</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-medium mt-2 mb-0">Mascotas Adoptadas</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+            <h3 id="reencuentros" class="text-4xl font-extrabold text-emerald-500 m-0">0</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-medium mt-2 mb-0">Reencuentros Exitosos</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+            <h3 id="usuarios" class="text-4xl font-extrabold text-blue-500 m-0">0</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-medium mt-2 mb-0">Usuarios Registrados</p>
+        </div>
+    </section>
 
-        <h2>🐾 Descubre tu mascota ideal</h2>
-        <p>¿Dónde vives?</p>
-        <select id="vivienda">
-            <option value="">Selecciona</option>
-            <option value="departamento">Departamento</option>
-            <option value="casa">Casa</option>
-        </select>
-        <p>¿Tienes niños?</p>
-        <select id="ninos">
-            <option value="">Selecciona</option>
-            <option value="si">Sí</option>
-            <option value="no">No</option>
-        </select>
-        <p>¿Cuánto tiempo libre tienes?</p>
-        <select id="tiempo">
-            <option value="">Selecciona</option>
-            <option value="poco">Poco</option>
-            <option value="medio">Medio</option>
-            <option value="mucho">Mucho</option>
-        </select>
-        <button onclick="evaluarMascota()">
-            Ver resultado
-        </button>
-        <div id="resultado"></div>
+    <!-- MASCOTAS DESTACADAS -->
+    <section class="bg-gray-100 dark:bg-gray-800/40 py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-1">Mascotas Destacadas - Junio 2026</h2>
+            <h4 class="text-center text-gray-500 dark:text-gray-400 font-medium mt-0 mb-8">Agrega a tus favoritos :D</h4>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden relative group">
+                    <span class="heart absolute top-3 right-3 bg-white/80 dark:bg-gray-700/80 p-2 rounded-full shadow cursor-pointer text-xl z-10 transition-transform active:scale-90">🤍</span>
+                    <div class="h-56 overflow-hidden">
+                        <img src="./images/kitty.jpg" alt="kitty" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold m-0 dark:text-white">Kitty</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm my-2">4 meses • Sociable</p>
+                        <button class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 rounded-lg border-0 cursor-pointer transition-colors">Ver más</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden relative group">
+                    <span class="heart absolute top-3 right-3 bg-white/80 dark:bg-gray-700/80 p-2 rounded-full shadow cursor-pointer text-xl z-10 transition-transform active:scale-90">🤍</span>
+                    <div class="h-56 overflow-hidden">
+                        <img src="./images/chocolate.jpg" alt="chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold m-0 dark:text-white">Chocolate</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm my-2">4 años • Juguetón</p>
+                        <button class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 rounded-lg border-0 cursor-pointer transition-colors">Ver más</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden relative group">
+                    <span class="heart absolute top-3 right-3 bg-white/80 dark:bg-gray-700/80 p-2 rounded-full shadow cursor-pointer text-xl z-10 transition-transform active:scale-90">🤍</span>
+                    <div class="h-56 overflow-hidden">
+                        <img src="./images/milo.jpg" alt="toby" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold m-0 dark:text-white">Toby</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm my-2">2 años • Muy cariñoso</p>
+                        <button class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 rounded-lg border-0 cursor-pointer transition-colors">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL TEST MODERNO -->
+    <div id="modal-test" class="hidden fixed inset-0 bg-black/50 items-center justify-center z-50 p-4">
+        <div class="bg-white dark:bg-gray-800 max-w-md w-full p-6 rounded-2xl shadow-2xl relative space-y-4 max-h-[90vh] overflow-y-auto">
+            <span class="cerrar-test absolute top-4 right-4 text-2xl font-bold text-gray-400 hover:text-gray-600 dark:hover:text-white cursor-pointer" onclick="cerrarTest()">
+                &times;
+            </span>
+
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2 m-0">🐾 Descubre tu mascota ideal</h2>
+            
+            <div class="space-y-3">
+                <div>
+                    <p class="text-sm font-medium mb-1 dark:text-gray-300">¿Dónde vives?</p>
+                    <select id="vivienda" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent dark:text-white">
+                        <option value="" class="dark:bg-gray-800">Selecciona</option>
+                        <option value="departamento" class="dark:bg-gray-800">Departamento</option>
+                        <option value="casa" class="dark:bg-gray-800">Casa</option>
+                    </select>
+                </div>
+                <div>
+                    <p class="text-sm font-medium mb-1 dark:text-gray-300">¿Tienes niños?</p>
+                    <select id="ninos" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent dark:text-white">
+                        <option value="" class="dark:bg-gray-800">Selecciona</option>
+                        <option value="si" class="dark:bg-gray-800">Sí</option>
+                        <option value="no" class="dark:bg-gray-800">No</option>
+                    </select>
+                </div>
+                <div>
+                    <p class="text-sm font-medium mb-1 dark:text-gray-300">¿Cuánto tiempo libre tienes?</p>
+                    <select id="tiempo" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent dark:text-white">
+                        <option value="" class="dark:bg-gray-800">Selecciona</option>
+                        <option value="poco" class="dark:bg-gray-800">Poco</option>
+                        <option value="medio" class="dark:bg-gray-800">Medio</option>
+                        <option value="mucho" class="dark:bg-gray-800">Mucho</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="evaluarMascota()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 rounded-lg border-0 cursor-pointer shadow transition-colors">
+                Ver resultado
+            </button>
+            <div id="resultado" class="text-center font-bold text-lg text-amber-600 dark:text-amber-400 mt-2"></div>
+        </div>
     </div>
-</div>
 
-    <button id="btn-arriba">
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="btn-arriba" class="hidden fixed bottom-6 right-6 w-12 h-12 bg-amber-500 hover:bg-amber-600 text-white rounded-full items-center justify-center text-xl border-0 shadow-lg cursor-pointer transition-transform duration-200 active:scale-95 z-40">
         ⬆
     </button>
 
-    <footer>
-        <p>© 2026 PawConnect - Todos los derechos reservados - Arii Vargas</p>
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-800 text-sm">
+        <p class="m-0">© 2026 PawConnect - Todos los derechos reservados - Arii Vargas</p>
     </footer>
 
+    <a href="https://wa.me/51949567574" class="fixed bottom-6 left-6 w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40" target="_blank" title="Contáctanos por WhatsApp">
+        <img src="./images/whatsApp_icon.png" alt="WhatsApp" class="w-8 h-8 object-contain">
+    </a>
 
     <script>
-
-let indice = 0;
-const heroImg = document.getElementById("hero-img");
-setInterval(() => {
-    indice++;
-    if(indice >= imagenes.length){
-        indice = 0;
-    }
-    heroImg.src = imagenes[indice];
-}, 3000);
-
-const hearts = document.querySelectorAll(".heart");
-
-hearts.forEach(heart => {
-    heart.addEventListener("click", () => {
-    if(heart.textContent === "🤍"){
-        heart.textContent = "❤️";
-        alert("🐾 ¡Mascota agregada a favoritos!");
-    }
-    else{
-        heart.textContent = "🤍";
-        alert("💔 Mascota eliminada de favoritos");
-    }
-});
-});
-</script>
-
-<script>
-let nombre = "";
-while (nombre === "" || nombre === null || nombre.trim() === "") {
-    nombre = prompt("🐾 ¡Bienvenido a PawConnect!\n\n¿Cómo te llamas? (Obligatorio)");
-    
-    if (nombre === null || nombre.trim() === "") {
-        alert("⚠️ Por favor, introduce tu nombre para continuar.");
-    }
-}
-alert("¡Hola " + nombre + "! 💕\n\nEsperamos que encuentres a tu compañero ideal.");
-</script>
-
-
-<script>
-const btnArriba =
-    document.getElementById("btn-arriba");
-window.addEventListener("scroll", () => {
-    if(window.scrollY > 300){
-        btnArriba.style.display = "flex";
-    }
-    else{
-        btnArriba.style.display = "none";
-    }
-});
-
-btnArriba.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-</script>
-
-
-<script>
-function animarContador(id, objetivo){
-    let contador = 0;
-    const elemento = document.getElementById(id);
-    const velocidad = objetivo / 100;
-    const intervalo = setInterval(() => {
-        contador += velocidad;
-        if(contador >= objetivo){
-            contador = objetivo;
-            clearInterval(intervalo);
+        let indice = 0;
+        const imagenes = ["./images/milord.jpg", "./images/kitty.jpg", "./images/chocolate.jpg", "./images/milo.jpg"];
+        const heroImg = document.getElementById("hero-img");
+        
+        if (heroImg) {
+            setInterval(() => {
+                indice++;
+                if(indice >= imagenes.length){
+                    indice = 0;
+                }
+                heroImg.src = imagenes[indice];
+            }, 3000);
         }
-        elemento.textContent =
-            Math.floor(contador);
-    }, 20);
-}
-animarContador("adopciones", 247);
-animarContador("reencuentros", 67);
-animarContador("usuarios", 1520);
-</script>
 
-<script>
-function abrirTest(){
-    document.getElementById("modal-test")
-    .style.display = "flex";
-}
-function cerrarTest(){
-    document.getElementById("modal-test")
-    .style.display = "none";
-}
-function evaluarMascota(){
-    let vivienda =
-        document.getElementById("vivienda").value;
-    let ninos =
-        document.getElementById("ninos").value;
-    let tiempo =
-        document.getElementById("tiempo").value;
-    let resultado =
-        document.getElementById("resultado");
-    if(
-        vivienda === "" ||
-        ninos === "" ||
-        tiempo === ""
-    ){
-        resultado.innerHTML =
-        "⚠️ Completa todas las preguntas";
-        return;
-    }
+        // Sistema de Favoritos
+        const hearts = document.querySelectorAll(".heart");
+        hearts.forEach(heart => {
+            heart.addEventListener("click", () => {
+                if(heart.textContent === "🤍"){
+                    heart.textContent = "❤️";
+                    alert("🐾 ¡Mascota agregada a favoritos!");
+                } else {
+                    heart.textContent = "🤍";
+                    alert("💔 Mascota eliminada de favoritos");
+                }
+            });
+        });
 
-    if(
-        vivienda === "departamento" &&
-        tiempo === "poco"
-    ){
-        resultado.innerHTML =
-        "🐱 Te recomendamos a Kitty";
-    }
+        // Prompt Obligatorio de Bienvenida
+        let nombre = "";
+        while (nombre === "" || nombre === null || nombre.trim() === "") {
+            nombre = prompt("🐾 ¡Bienvenido a PawConnect!\n\n¿Cómo te llamas? (Obligatorio)");
+            if (nombre === null || nombre.trim() === "") {
+                alert("⚠️ Por favor, introduce tu nombre para continuar.");
+            }
+        }
+        alert("¡Hola " + nombre + "! 💕\n\nEsperamos que encuentres a tu compañero ideal.");
 
-    else if(
-        vivienda === "casa" &&
-        ninos === "si"
-    ){
-        resultado.innerHTML =
-        "🐶 Te recomendamos a Chocolate";
-    }
+        // Botón Volver Arriba
+        const btnArriba = document.getElementById("btn-arriba");
+        window.addEventListener("scroll", () => {
+            if(window.scrollY > 300){
+                btnArriba.style.display = "flex";
+            } else {
+                btnArriba.style.display = "none";
+            }
+        });
+        btnArriba.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
 
-    else{
-        resultado.innerHTML =
-        "🐾 Te recomendamos a Toby";
-    }
-}
-</script>
+        // Contadores Animados
+        function animarContador(id, objetivo){
+            let contador = 0;
+            const elemento = document.getElementById(id);
+            const velocidad = objetivo / 100;
+            const intervalo = setInterval(() => {
+                contador += velocidad;
+                if(contador >= objetivo){
+                    contador = objetivo;
+                    clearInterval(intervalo);
+                }
+                elemento.textContent = Math.floor(contador);
+            }, 20);
+        }
+        animarContador("adopciones", 247);
+        animarContador("reencuentros", 67);
+        animarContador("usuarios", 1520);
 
-<a href="https://wa.me/51949567574"
-   class="whatsapp"
-   target="_blank"
-   title="Contáctanos por WhatsApp">
-    <img src="./images/whatsApp_icon.png" alt="WhatsApp">
-</a>
+        // Modal del Test
+        function abrirTest(){
+            const modal = document.getElementById("modal-test");
+            modal.style.display = "flex";
+        }
+        function cerrarTest(){
+            const modal = document.getElementById("modal-test");
+            modal.style.display = "none";
+        }
+        function evaluarMascota(){
+            let vivienda = document.getElementById("vivienda").value;
+            let ninos = document.getElementById("ninos").value;
+            let tiempo = document.getElementById("tiempo").value;
+            let resultado = document.getElementById("resultado");
+            
+            if(vivienda === "" || ninos === "" || tiempo === ""){
+                resultado.innerHTML = "⚠️ Completa todas las preguntas";
+                return;
+            }
+            if(vivienda === "departamento" && tiempo === "poco"){
+                resultado.innerHTML = "🐱 Te recomendamos a Kitty";
+            } else if(vivienda === "casa" && ninos === "si"){
+                resultado.innerHTML = "🐶 Te recomendamos a Chocolate";
+            } else {
+                resultado.innerHTML = "🐾 Te recomendamos a Toby";
+            }
+        }
 
-<script>
-const darkBtn = document.getElementById("modoOscuro");
-darkBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    if(document.body.classList.contains("dark")){
-        darkBtn.textContent = "☀️";
-    }else{
-        darkBtn.textContent = "🌙";
-    }
-});
-</script>
+        // Hamburguesa Responsiva
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const menuList = document.getElementById('menu-list');
+        hamburgerBtn.addEventListener('click', () => {
+            menuList.classList.toggle('hidden');
+            menuList.classList.toggle('flex');
+        });
 
-<script>
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const menuList = document.getElementById('menu-list');
 
-    hamburgerBtn.addEventListener('click', () => {
-        menuList.classList.toggle('mostrar');
-    });
-</script>
-
+        const darkBtn = document.getElementById("modoOscuro");
+        darkBtn.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            if(document.documentElement.classList.contains("dark")){
+                darkBtn.textContent = "☀️";
+            } else {
+                darkBtn.textContent = "🌙";
+            }
+        });
+    </script>
 </body>
 </html>
