@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawConnect</title>
-    <link rel="icon" type="image/jpeg" href="./images/logoPawConnect.jpeg">
-    
-    <!-- CDN de Tailwind CSS (Activo al 100%) -->
+    <link rel="icon" type="image/jpeg" href="images/logoPawConnect.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuración para activar la fuente Poppins y el modo oscuro por clase -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -31,7 +27,7 @@
     <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 px-4 py-3 md:px-8 flex flex-col md:flex-row md:items-center md:justify-between">
         <div class="flex items-center justify-between w-full md:w-auto">
             <div class="logo">
-                <img src="./images/logoPawConnect.jpeg" alt="logo-img" width="120" class="rounded">
+                <img src="images/logoPawConnect.jpeg" alt="logo-img" width="120" class="rounded">
             </div>
 
             <div class="flex items-center gap-4">
@@ -52,12 +48,10 @@
         </ul>
     </header>
 
-    <!-- BANNER DE BIENVENIDA -->
     <div id="bienvenida" class="bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200 text-center py-2 px-4 font-medium text-sm">
         🐾 ¡Bienvenido(a) a PawConnect! Encuentra a tu nuevo mejor amigo.
     </div>
 
-    <!-- SECCIÓN HERO -->
     <section class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
         <div class="space-y-6">
             <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
@@ -77,10 +71,9 @@
         </div>
 
         <div class="w-full h-80 md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
-            <img id="hero-img" src="./images/milord.jpg" alt="Mascota" class="w-full h-full object-cover">
+            <img id="hero-img" src="images/milord.jpg" alt="Mascota" class="w-full h-full object-cover">
         </div>
 
-        <!-- TARJETA DEL TEST -->
         <div class="bg-gradient-to-br from-amber-400 to-orange-500 text-white p-6 rounded-2xl shadow-xl space-y-3 md:absolute md:-bottom-10 md:left-4 max-w-sm">
             <span class="bg-white/20 px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">✨ Test interactivo</span>
             <h3 class="text-xl font-bold m-0">¿Qué mascota encaja contigo?</h3>
@@ -91,7 +84,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE ESTADÍSTICAS -->
     <section class="max-w-6xl mx-auto px-4 pt-16 pb-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
         <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
             <h3 id="adopciones" class="text-4xl font-extrabold text-amber-500 m-0">0</h3>
@@ -107,7 +99,6 @@
         </div>
     </section>
 
-    <!-- MASCOTAS DESTACADAS -->
     <section class="bg-gray-100 dark:bg-gray-800/40 py-12 px-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-1">Mascotas Destacadas - Junio 2026</h2>
@@ -118,7 +109,7 @@
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden relative group">
                     <span class="heart absolute top-3 right-3 bg-white/80 dark:bg-gray-700/80 p-2 rounded-full shadow cursor-pointer text-xl z-10 transition-transform active:scale-90">🤍</span>
                     <div class="h-56 overflow-hidden">
-                        <img src="./images/kitty.jpg" alt="kitty" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="images/kitty.jpg" alt="kitty" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-5 text-center">
                         <h3 class="text-xl font-bold m-0 dark:text-white">Kitty</h3>
@@ -127,11 +118,10 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta 2 -->
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden relative group">
                     <span class="heart absolute top-3 right-3 bg-white/80 dark:bg-gray-700/80 p-2 rounded-full shadow cursor-pointer text-xl z-10 transition-transform active:scale-90">🤍</span>
                     <div class="h-56 overflow-hidden">
-                        <img src="./images/chocolate.jpg" alt="chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="images/chocolate.jpg" alt="chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-5 text-center">
                         <h3 class="text-xl font-bold m-0 dark:text-white">Chocolate</h3>
@@ -140,11 +130,10 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta 3 -->
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden relative group">
                     <span class="heart absolute top-3 right-3 bg-white/80 dark:bg-gray-700/80 p-2 rounded-full shadow cursor-pointer text-xl z-10 transition-transform active:scale-90">🤍</span>
                     <div class="h-56 overflow-hidden">
-                        <img src="./images/milo.jpg" alt="toby" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="images/milo.jpg" alt="toby" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-5 text-center">
                         <h3 class="text-xl font-bold m-0 dark:text-white">Toby</h3>
@@ -156,7 +145,6 @@
         </div>
     </section>
 
-    <!-- MODAL TEST MODERNO -->
     <div id="modal-test" class="hidden fixed inset-0 bg-black/50 items-center justify-center z-50 p-4">
         <div class="bg-white dark:bg-gray-800 max-w-md w-full p-6 rounded-2xl shadow-2xl relative space-y-4 max-h-[90vh] overflow-y-auto">
             <span class="cerrar-test absolute top-4 right-4 text-2xl font-bold text-gray-400 hover:text-gray-600 dark:hover:text-white cursor-pointer" onclick="cerrarTest()">
@@ -200,7 +188,6 @@
         </div>
     </div>
 
-    <!-- BOTÓN VOLVER ARRIBA -->
     <button id="btn-arriba" class="hidden fixed bottom-6 right-6 w-12 h-12 bg-amber-500 hover:bg-amber-600 text-white rounded-full items-center justify-center text-xl border-0 shadow-lg cursor-pointer transition-transform duration-200 active:scale-95 z-40">
         ⬆
     </button>
@@ -210,12 +197,12 @@
     </footer>
 
     <a href="https://wa.me/51949567574" class="fixed bottom-6 left-6 w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40" target="_blank" title="Contáctanos por WhatsApp">
-        <img src="./images/whatsApp_icon.png" alt="WhatsApp" class="w-8 h-8 object-contain">
+        <img src="images/whatsApp_icon.png" alt="WhatsApp" class="w-8 h-8 object-contain">
     </a>
 
     <script>
         let indice = 0;
-        const imagenes = ["./images/milord.jpg", "./images/kitty.jpg", "./images/chocolate.jpg", "./images/milo.jpg"];
+        const imagenes = ["images/milord.jpg", "images/kitty.jpg", "images/chocolate.jpg", "images/milo.jpg"];
         const heroImg = document.getElementById("hero-img");
         
         if (heroImg) {
@@ -228,7 +215,6 @@
             }, 3000);
         }
 
-        // Sistema de Favoritos
         const hearts = document.querySelectorAll(".heart");
         hearts.forEach(heart => {
             heart.addEventListener("click", () => {
@@ -242,7 +228,6 @@
             });
         });
 
-        // Prompt Obligatorio de Bienvenida
         let nombre = "";
         while (nombre === "" || nombre === null || nombre.trim() === "") {
             nombre = prompt("🐾 ¡Bienvenido a PawConnect!\n\n¿Cómo te llamas? (Obligatorio)");
@@ -252,7 +237,6 @@
         }
         alert("¡Hola " + nombre + "! 💕\n\nEsperamos que encuentres a tu compañero ideal.");
 
-        // Botón Volver Arriba
         const btnArriba = document.getElementById("btn-arriba");
         window.addEventListener("scroll", () => {
             if(window.scrollY > 300){
@@ -265,7 +249,7 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-        // Contadores Animados
+        // Contadores
         function animarContador(id, objetivo){
             let contador = 0;
             const elemento = document.getElementById(id);
@@ -283,15 +267,9 @@
         animarContador("reencuentros", 67);
         animarContador("usuarios", 1520);
 
-        // Modal del Test
-        function abrirTest(){
-            const modal = document.getElementById("modal-test");
-            modal.style.display = "flex";
-        }
-        function cerrarTest(){
-            const modal = document.getElementById("modal-test");
-            modal.style.display = "none";
-        }
+        function abrirTest(){ document.getElementById("modal-test").style.display = "flex"; }
+        function cerrarTest(){ document.getElementById("modal-test").style.display = "none"; }
+        
         function evaluarMascota(){
             let vivienda = document.getElementById("vivienda").value;
             let ninos = document.getElementById("ninos").value;
@@ -311,7 +289,6 @@
             }
         }
 
-        // Hamburguesa Responsiva
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const menuList = document.getElementById('menu-list');
         hamburgerBtn.addEventListener('click', () => {
@@ -319,7 +296,7 @@
             menuList.classList.toggle('flex');
         });
 
-
+        // Modo Oscuro
         const darkBtn = document.getElementById("modoOscuro");
         darkBtn.addEventListener("click", () => {
             document.documentElement.classList.toggle("dark");
