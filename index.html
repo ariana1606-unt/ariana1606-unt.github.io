@@ -1,44 +1,333 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Práctica Ariana</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  
-  <body class="bg-white text-gray-900 font-bold">
-  <div class="min-h-screen flex flex-col p-2 gap-2">
-    <header class="hidden md:block bg-red-500 text-white text-center py-4">
-      HEADER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect</title>
+    <link rel="icon" type="image/jpeg" href="./images/logoPawConnect.jpeg">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./images/logoPawConnect.jpeg" alt="logo-img" width="120">
+            </div>
+
+            <div class="nav-buttons">
+                <button id="modoOscuro" class="dark-btn">
+                    🌙
+                </button>
+                
+                <button id="hamburger-btn" class="hamburger-btn">
+                    ☰
+                </button>
+            </div>
+        </div>
+
+        <ul id="menu-list" class="nav-links text-center md:flex">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="adopcion.html">Adopción</a></li>
+            <li><a href="perdidos.html">Perdidos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+        </ul>
     </header>
 
-    <div class="grid grid-cols-3 gap-2">
-      <nav class="col-span-2 bg-orange-300 text-black text-center py-4 ">
-        NAV
-      </nav>
+    <div id="bienvenida">
+        🐾 ¡Bienvenido(a) a PawConnect! Encuentra a tu nuevo mejor amigo.
+    </div>
+        <section class="hero">
+        <div class="hero-text">
+            <h1>
+                Conectando mascotas con hogares llenos de amor
+            </h1>
 
-      <div class="col-span-1 bg-green-300 p-2 flex items-center justify-center font-normal">
-        <input type="date" value="dd/mm/aaaa" class="w-full p-1 bg-white border-gray-300 text-md text-center" />
-      </div>
+            <p>
+                Plataforma para adopción y búsqueda de mascotas perdidas.
+            </p>
+
+            <div class="buttons">
+                <button class="btn-primary">
+                    Adoptar
+                </button>
+                <button class="btn-secondary">
+                    Reportar Mascota
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img id="hero-img" src="./images/milord.jpg" alt="Mascota">
+        </div>
+
+        <div class="test-card">
+    <span>✨ Test interactivo</span>
+    <h3>
+        ¿Qué mascota encaja contigo?
+    </h3>
+    <p>
+        Responde 3 preguntas y descubre tu compañero ideal.
+    </p>
+    <button onclick="abrirTest()">
+        Comenzar test
+    </button>
+</div>
+
+    </section>
+
+    <section class="stats">
+    <div class="stat-box">
+        <h3 id="adopciones">0</h3>
+        <p>Mascotas Adoptadas</p>
     </div>
 
-    <div class="grid grid-cols-3 gap-2 flex-grow">
-      <main class="col-span-2 bg-red-100 p-4 text-gray-800 text-sm leading-relaxed font-normal text-xl">
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at delectus dolores consequuntur nesciunt ex? Excepturi voluptas maxime tenetur corporis, ducimus architecto sit quia. Harum maiores neque numquam ut adipisci.
-      </main>
-      <aside class="col-span-1 bg-sky-100 text-blue-500 font-bold flex items-center justify-center">
-        ASIDE
-      </aside>
+    <div class="stat-box">
+        <h3 id="reencuentros">0</h3>
+        <p>Reencuentros Exitosos</p>
     </div>
 
-    <div class="block md:hidden px-1 py-3 text-black-500 font-normal text-sm ">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eum quasi quidem quam, repellat at possimus!
+    <div class="stat-box">
+        <h3 id="usuarios">0</h3>
+        <p>Usuarios Registrados</p>
     </div>
+</section>
 
-    <footer class="bg-violet-400 text-black text-center py-4 font-bold mt-auto">
-      FOOTER
+    <section class="featured">
+        <h2>Mascotas Destacadas - Junio 2026</h2>
+        <h4>Agrega a tus favoritos :D</h4>
+        <div id="mensaje-favorito"></div>
+
+        <div class="cards">
+            <div class="card">
+                <span class="heart">🤍</span>
+                <img src="./images/kitty.jpg" alt="kitty">
+                <h3>Kitty</h3>
+                <p>4 meses • Sociable</p>
+                <button>Ver más</button>
+            </div>
+
+            <div class="card">
+                <span class="heart">🤍</span>
+                <img src="./images/chocolate.jpg" alt="chocolate">
+                <h3>Chocolate</h3>
+                <p>4 años • Juguetón</p>
+                <button>Ver más</button>
+            </div>
+
+            <div class="card">
+                <span class="heart">🤍</span>
+                <img src="./images/milo.jpg" alt="toby">
+                <h3>Toby</h3>
+                <p>2 años • Muy cariñoso</p>
+                <button>Ver más</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-test" class="modal-test">
+    <div class="modal-test-content">
+        <span class="cerrar-test" onclick="cerrarTest()">
+            &times;
+        </span>
+
+        <h2>🐾 Descubre tu mascota ideal</h2>
+        <p>¿Dónde vives?</p>
+        <select id="vivienda">
+            <option value="">Selecciona</option>
+            <option value="departamento">Departamento</option>
+            <option value="casa">Casa</option>
+        </select>
+        <p>¿Tienes niños?</p>
+        <select id="ninos">
+            <option value="">Selecciona</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+        <p>¿Cuánto tiempo libre tienes?</p>
+        <select id="tiempo">
+            <option value="">Selecciona</option>
+            <option value="poco">Poco</option>
+            <option value="medio">Medio</option>
+            <option value="mucho">Mucho</option>
+        </select>
+        <button onclick="evaluarMascota()">
+            Ver resultado
+        </button>
+        <div id="resultado"></div>
+    </div>
+</div>
+
+    <button id="btn-arriba">
+        ⬆
+    </button>
+
+    <footer>
+        <p>© 2026 PawConnect - Todos los derechos reservados - Arii Vargas</p>
     </footer>
-  </div>
+
+
+    <script>
+
+let indice = 0;
+const heroImg = document.getElementById("hero-img");
+setInterval(() => {
+    indice++;
+    if(indice >= imagenes.length){
+        indice = 0;
+    }
+    heroImg.src = imagenes[indice];
+}, 3000);
+
+const hearts = document.querySelectorAll(".heart");
+
+hearts.forEach(heart => {
+    heart.addEventListener("click", () => {
+    if(heart.textContent === "🤍"){
+        heart.textContent = "❤️";
+        alert("🐾 ¡Mascota agregada a favoritos!");
+    }
+    else{
+        heart.textContent = "🤍";
+        alert("💔 Mascota eliminada de favoritos");
+    }
+});
+});
+</script>
+
+<script>
+let nombre = "";
+while (nombre === "" || nombre === null || nombre.trim() === "") {
+    nombre = prompt("🐾 ¡Bienvenido a PawConnect!\n\n¿Cómo te llamas? (Obligatorio)");
+    
+    if (nombre === null || nombre.trim() === "") {
+        alert("⚠️ Por favor, introduce tu nombre para continuar.");
+    }
+}
+alert("¡Hola " + nombre + "! 💕\n\nEsperamos que encuentres a tu compañero ideal.");
+</script>
+
+
+<script>
+const btnArriba =
+    document.getElementById("btn-arriba");
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 300){
+        btnArriba.style.display = "flex";
+    }
+    else{
+        btnArriba.style.display = "none";
+    }
+});
+
+btnArriba.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
+
+
+<script>
+function animarContador(id, objetivo){
+    let contador = 0;
+    const elemento = document.getElementById(id);
+    const velocidad = objetivo / 100;
+    const intervalo = setInterval(() => {
+        contador += velocidad;
+        if(contador >= objetivo){
+            contador = objetivo;
+            clearInterval(intervalo);
+        }
+        elemento.textContent =
+            Math.floor(contador);
+    }, 20);
+}
+animarContador("adopciones", 247);
+animarContador("reencuentros", 67);
+animarContador("usuarios", 1520);
+</script>
+
+<script>
+function abrirTest(){
+    document.getElementById("modal-test")
+    .style.display = "flex";
+}
+function cerrarTest(){
+    document.getElementById("modal-test")
+    .style.display = "none";
+}
+function evaluarMascota(){
+    let vivienda =
+        document.getElementById("vivienda").value;
+    let ninos =
+        document.getElementById("ninos").value;
+    let tiempo =
+        document.getElementById("tiempo").value;
+    let resultado =
+        document.getElementById("resultado");
+    if(
+        vivienda === "" ||
+        ninos === "" ||
+        tiempo === ""
+    ){
+        resultado.innerHTML =
+        "⚠️ Completa todas las preguntas";
+        return;
+    }
+
+    if(
+        vivienda === "departamento" &&
+        tiempo === "poco"
+    ){
+        resultado.innerHTML =
+        "🐱 Te recomendamos a Kitty";
+    }
+
+    else if(
+        vivienda === "casa" &&
+        ninos === "si"
+    ){
+        resultado.innerHTML =
+        "🐶 Te recomendamos a Chocolate";
+    }
+
+    else{
+        resultado.innerHTML =
+        "🐾 Te recomendamos a Toby";
+    }
+}
+</script>
+
+<a href="https://wa.me/51949567574"
+   class="whatsapp"
+   target="_blank"
+   title="Contáctanos por WhatsApp">
+    <img src="./images/whatsApp_icon.png" alt="WhatsApp">
+</a>
+
+<script>
+const darkBtn = document.getElementById("modoOscuro");
+darkBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    if(document.body.classList.contains("dark")){
+        darkBtn.textContent = "☀️";
+    }else{
+        darkBtn.textContent = "🌙";
+    }
+});
+</script>
+
+<script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const menuList = document.getElementById('menu-list');
+
+    hamburgerBtn.addEventListener('click', () => {
+        menuList.classList.toggle('mostrar');
+    });
+</script>
+
 </body>
 </html>
